@@ -1,0 +1,98 @@
+@import 'global';
+
+.logo{
+    width: 250px;
+    height: 100px;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    border-top: 30px solid rgb(52,53,51);
+    width: 100%;
+}
+
+.wrapper{
+    background-color: rgba(100, 132, 132,0.1);
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+//ejemplo de nesting
+
+nav {
+    @include caja-flex(space-between, center, nowrap);
+
+    ul{
+        display: flex;
+        padding: 0;
+
+        a{
+            padding: 10px;
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+        a:hover{
+            color: #6495ED;
+            transform: scale(1.1);
+        }
+    }
+}
+
+.presentacion{
+    padding-top: 300px;
+    padding-bottom: 5px;
+    
+    @include caja-flex(space-between, center, nowrap);
+    
+    .flex-item2{
+        text-align: center;
+        width: 35%;
+        height: 50%;
+    }
+    .flex-item1{
+        width: 50%;
+        height: 50%;
+    }
+     
+    h1{
+         margin-top: 0;
+         padding-right: 20px;
+         font-size: $font-h1;
+    }
+
+    p{
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+ }
+
+ .servicios{
+     div{
+        text-align: center;
+     }
+
+     .tipo-servicio{
+         @include caja-flex(center, center, nowrap);
+
+         i{
+             font-size: 30px;
+             color: #6495ED;
+         }
+     }
+ }
+
+ footer{
+     min-height: 80px;
+     background-color: rgb(52, 53, 51);
+     margin-top: 0;
+     .footer-content{
+         text-align: center;
+         padding-top: 30px;
+         padding-bottom: 30px;
+     }
+ }
+
+ @import 'medios';
+ 
